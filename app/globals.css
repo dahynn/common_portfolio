@@ -1625,3 +1625,46 @@ a { color:inherit; text-decoration:none; }
   mask:none;
 }
 #projects .store-item:hover { background:#fdf1f2; }
+
+/* 개발 여정의 이전 포트폴리오 강조색을 APR 팔레트로 통일합니다. */
+#journey .journey-item { --line-color:var(--apr-red-40); }
+#journey .journey-item:last-child { --line-color:var(--apr-red); }
+#journey .journey-track::before { background:linear-gradient(to bottom,var(--apr-red-40),var(--apr-red)); }
+#journey .journey-date { color:var(--apr-red); }
+#journey .hanwha-campus::before,
+#journey .ssafy-campus::before,
+#journey .dongguk-university::before,
+#journey .exchange-study::before,
+#journey .education-study::before { background:#fde6ea; }
+
+/* 페이지 우측 상단의 APR 표기는 보조 브랜드 요소로 작게 유지합니다. */
+.hanwha-logo.apr-logo,
+#introduction .hanwha-logo.apr-logo { width:104px; height:31px; }
+
+/* 여정의 도착점은 타임라인의 끝에서 오른쪽으로 이어집니다. */
+#journey .journey-destination {
+  align-self:auto;
+  margin-right:0;
+  margin-left:calc(var(--axis, 0%) + 3rem);
+}
+
+@media (max-width:760px) {
+  .hanwha-logo.apr-logo,
+  #introduction .hanwha-logo.apr-logo { width:88px; height:26px; }
+  #journey .journey-destination { margin-left:0; }
+}
+
+/* Project Store도 APR의 흰 바탕·레드 포인트 체계로 정리합니다. */
+#projects.project-index-page { background:#fff; }
+#projects .index-heading .eyebrow { color:var(--apr-red); }
+#projects .project-row {
+  border:1px solid var(--apr-red-40);
+  background:#fff;
+}
+#projects .project-row.is-available { border-color:var(--apr-red-40); }
+#projects .project-row:hover {
+  background:#fdf1f2;
+  box-shadow:0 20px 46px rgba(230,0,42,.14);
+}
+#projects .project-action b { box-shadow:0 6px 14px rgba(230,0,42,.2); }
+#projects .project-row:hover .project-action b { box-shadow:0 12px 24px rgba(230,0,42,.3); }
