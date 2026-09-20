@@ -27,5 +27,5 @@ await access(resolve(outputDirectory, '404.html'));
 await access(resolve(outputDirectory, 'CNAME'));
 await access(resolve(outputDirectory, 'favicon.svg'));
 const customDomain = (await readFile(resolve(outputDirectory, 'CNAME'), 'utf8')).trim();
-assert.equal(customDomain, 'apr.dahynn.github.io', 'Unexpected GitHub Pages custom domain.');
+assert.equal(customDomain, 'apr.dahyeon.kr', 'Unexpected GitHub Pages custom domain.');
 console.log(`Static portfolio verified: 9 sections, ${assetPaths.size} local assets, 404 page, and custom domain.`);
