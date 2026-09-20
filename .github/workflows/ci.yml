@@ -40,7 +40,7 @@ jobs:
         run: npm run build:pages
 
       - name: Upload GitHub Pages artifact
-        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && vars.PORTFOLIO_PAGES_ENABLED == 'true'
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v4
         with:
           path: dist/client
@@ -48,7 +48,7 @@ jobs:
   deploy:
     name: Deploy portfolio
     needs: quality
-    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && vars.PORTFOLIO_PAGES_ENABLED == 'true'
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
